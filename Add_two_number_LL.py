@@ -18,10 +18,10 @@ class Solution:
                     val2 = l2.val  # going through each value from the list L2 and putting it to val2
                     l2 = l2.next
 
-                # sum = (val1+val2+carry)%10
+                # sum = (val1+val2+carry)%10  # Line 21 and 22 have the same calculation but 20ms slower
                 # carry = int((val1+val2+carry)/10)
                 carry, sum = divmod(val1+val2+carry, 10) # Forming Sum and carry using faster Solution
                 n.next = ListNode(sum)  # Adding the Sum to new List 'n' 
                 n = n.next
 
-            return root.next
+            return root.next  # O(n) solution
